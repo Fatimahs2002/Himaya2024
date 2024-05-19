@@ -531,13 +531,13 @@ span {
 # Hero Section
 --------------------------------------------------------------*/
 #hero {
-  height: calc(100vh - 30px);
+  height: 100vh;
   background: url(../img/pixelcut-export.jpeg) center center no-repeat;
   background-size: cover;
   position: relative;
   width: 100%;
- 
 }
+
 
 @media (min-width: 1025px) {
   #hero {
@@ -554,6 +554,7 @@ span {
 @media (max-height: 600px) {
   #hero {
     height: 100vh;
+    
   }
 }
 
