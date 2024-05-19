@@ -538,6 +538,13 @@ span {
   width: 100%;
 }
 
+/* Styles for smaller screens */
+@media (max-width: 768px) { 
+  #hero {
+    background-size: contain; /* Adjust value as needed */
+  }
+}
+
 
 @media (min-width: 1025px) {
   #hero {
