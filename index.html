@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Ets.Himaya</title>
+  <meta name="description" content="Description of the page" />
+  <meta name="keywords" content="keywords, for, the, page" />
+  <!-- Favicons -->
+  <link href="assets/img/favicon.png" rel="icon" />
+  <link href="assets/img/apple-touch-icon.png" rel="apple-touch-icon" />
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,700,700i|Roboto:100,300,400,500,700|Philosopher:400,400i,700,700i" rel="stylesheet" />
+  <!-- Vendor CSS Files -->
+  <link href="assets/vendor/aos/aos.css" rel="stylesheet" />
+  <link href="assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet" />
+  <link href="assets/vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet" />
+  <link href="assets/vendor/glightbox/css/glightbox.min.css" rel="stylesheet" />
+  <link href="assets/vendor/swiper/swiper-bundle.min.css" rel="stylesheet" />
+  <!-- Template Main CSS File -->
+  <link href="assets/css/style.css" rel="stylesheet" />
+  <style>
+    .language-select-container {
+      margin: 20px auto;
+      max-width: 80%;
+    }
+
+    .language-select-container select {
+      width: 100%;
+      padding: 12px 20px;
+      border: none;
+      border-radius: 25px;
+      background-color: #f8f9fa;
+      font-size: 16px;
+      color: #6c757d;
+      appearance: none;
+    }
+
+    .language-select-container select:focus {
+      outline: none;
+    }
+
+    .language-select-container option {
+      background-color: #f8f9fa;
+      color: #6c757d;
+    }
+
+    .language-select-container option:hover {
+      background-color: #e9ecef;
+    }
+
+    .language-select-container .form-select-lg {
+      font-size: 18px;
+    }
+  </style>
+</head>
+<body>
+<header id="header" class="header fixed-top d-flex align-items-center">
+  <div class="container d-flex align-items-center justify-content-between">
+    <div id="logo">
+      <img src="./assets/img/logo.jpg" alt="Company Logo" />
+    </div>
+    <nav id="navbar" class="navbar d-flex justify-content-end align-items-center w-100">
+      <ul>
+        <li><a class="nav-link scrollto active translate" data-en="Home" data-ar="الرئيسية" href="#" onclick="loadPage('home.html', this); return false;">Home</a></li>
+        <li><a class="nav-link scrollto translate" data-en="About" data-ar="حول" href="#" onclick="loadPage('about.html', this); return false;">About</a></li>
+        <li><a class="nav-link scrollto translate" data-en="Services" data-ar="خدمات" href="#" onclick="loadPage('services.html', this); return false;">Services</a></li>
+        <li><a class="nav-link scrollto translate" data-en="Safety Instruction" data-ar="تعليمات السلامة" href="#" onclick="loadPage('safety.html', this); return false;">Safety Instruction</a></li>
+        <li><a class="nav-link scrollto translate" data-en="Contact" data-ar="اتصال" href="#" onclick="loadPage('contact.html', this); return false;">Contact</a></li>
+      </ul>
+      <i class="bi bi-list mobile-nav-toggle"></i>
+    </nav>
+  </div>
+  <div class="text-center m-1">
+    <select id="languageSelect" class="form-select form-select-sm shadow-none border-black w-auto" onchange="changeLanguage(this.value)" onclick="loadPage(getCurrentPage());">
+      <option value="en" class="bg-light text-secondary">English</option>
+      <option value="ar" class="bg-light text-secondary">العربية</option>
+    </select>
+  </div>
+</header>
+<div id="content">
+  <!-- This is where the content of the pages will be displayed -->
+</div>
+<footer class="footer">
+  <div class="copyrights">
+    <div class="container">
+      <div class="credits" style="color: green;">Designed by <a href="#">YourName</a></div>
+    </div>
+  </div>
+</footer>
+<script src="assets/vendor/aos/aos.js"></script>
+<script src="assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+<script src="assets/vendor/glightbox/js/glightbox.min.js"></script>
+<script src="assets/vendor/swiper/swiper-bundle.min.js"></script>
+<!-- Template Main JS File -->
+<script src="assets/js/main.js"></script>
+<script>
+let currentActiveLink = null;
+
+window.addEventListener("DOMContentLoaded", function () {
+  setInitialLanguage();
+  loadPage("home.html", true); // Load the home page initially
+});
+
+function loadPage(page, initialLoad = false) {
+  fetch(page)
+    .then(response => response.text())
+    .then(data => {
+      document.getElementById("content").innerHTML = data;
+      changeLanguage(getSelectedLanguage());
+
+      // Update active link
+      const navLinks = document.querySelectorAll("#navbar a.nav-link");
+      navLinks.forEach(link => link.classList.remove("active"));
+
+      if (initialLoad && !currentActiveLink) {
+        currentActiveLink = document.querySelector("#navbar a.nav-link[href='#']");
+      } else {
+        currentActiveLink = Array.from(navLinks).find(link => link.getAttribute('onclick').includes(page));
+      }
+
+      if (currentActiveLink) {
+        currentActiveLink.classList.add("active");
+      }
+      // hideMobileNavbarOnClick();
+    })
+    .catch(error => console.error("Error loading page:", error));
+}
+
+function changeLanguage(language) {
+  const elements = document.querySelectorAll('[data-' + language + ']');
+  elements.forEach(element => {
+    const translation = element.getAttribute('data-' + language);
+    if (translation) {
+      element.textContent = translation;
+    }
+  });
+
+  // Translate the content of the currently loaded page
+  const contentElements = document.querySelectorAll('#content [data-' + language + ']');
+  contentElements.forEach(element => {
+    const translation = element.getAttribute('data-' + language);
+    if (translation) {
+      element.textContent = translation;
+    }
+  });
+
+  // Set direction based on language
+  document.body.setAttribute('dir', language === 'ar' ? 'rtl' : 'ltr');
+}
+
+function setInitialLanguage() {
+  const language = getSelectedLanguage();
+  changeLanguage(language);
+}
+
+function getSelectedLanguage() {
+  const languageSelect = document.getElementById("languageSelect");
+  return languageSelect.value;
+}
+
+function getCurrentPage() {
+  const page = localStorage.getItem('currentPage');
+  return page ? page : "home.html";
+}
+
+function onLanguageChange(value) {
+  changeLanguage(value);
+  loadPage(getCurrentPage());
+}
+
+// Save current page URL to local storage
+window.addEventListener('beforeunload', function () {
+  const currentPage = getCurrentPage();
+  localStorage.setItem('currentPage', currentPage);
+});
+function hideMobileNavbarOnClick() {
+const mobileNavLinks = document.querySelectorAll('.navbar-mobile ul li a');
+mobileNavLinks.forEach(link => {
+  link.addEventListener('click', function() {
+    const mobileNavbar = document.querySelector('.navbar-mobile');
+    mobileNavbar.style.display = 'none';
+  });
+});
+}
+// JavaScript to hide the mobile navbar when a link is clicked
+</script>
+</body>
+</html>
+
+
+
