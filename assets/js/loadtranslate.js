@@ -28,7 +28,7 @@ function loadPage(page, link = null) {
       }
 
       saveCurrentPage(page);
-      hideMobileNavbarOnClick();
+    
     })
     .catch(error => console.error("Error loading page:", error));
 }
