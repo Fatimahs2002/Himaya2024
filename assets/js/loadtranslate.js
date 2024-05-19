@@ -83,14 +83,14 @@ window.addEventListener('beforeunload', function () {
   localStorage.setItem('currentPage', currentPage);
 });
 
-function hideMobileNavbarOnClick() {
-  const mobileNavLinks = document.querySelectorAll('.navbar-mobile ul li a');
-  mobileNavLinks.forEach(link => {
-    link.addEventListener('click', function() {
-      const mobileNavbar = document.querySelector('.navbar-mobile  ');
-      if (mobileNavbar) {
-        mobileNavbar.style.display = 'none';
-      }
-    });
-  });
-}
+// function hideMobileNavbarOnClick() {
+//   const mobileNavLinks = document.querySelectorAll('.navbar-mobile ul li a');
+//   mobileNavLinks.forEach(link => {
+//     link.addEventListener('click', function() {
+//       const mobileNavbar = document.querySelector('.navbar-mobile  ');
+//       if (mobileNavbar) {
+//         mobileNavbar.style.display = 'none';
+//       }
+//     });
+//   });
+// }
