@@ -8,7 +8,7 @@
   <meta name="keywords" content="keywords, for, the, page" />
   <!-- Favicons -->
   <link href="assets/img/favicon.png" rel="icon" />
-  <link href="assets/img/apple-touch-icon.png" rel="apple-touch-icon" />
+  <link href="assets/img/apple-touch-icon.png" rel="stylesheet" />
   <!-- Google Fonts -->
   <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,700,700i|Roboto:100,300,400,500,700|Philosopher:400,400i,700,700i" rel="stylesheet" />
   <!-- Vendor CSS Files -->
@@ -52,6 +52,11 @@
     .language-select-container .form-select-lg {
       font-size: 18px;
     }
+
+    .nav-link.active {
+      color: #b11d2e;
+      font-weight: bold;
+    }
   </style>
 </head>
 <body>
@@ -62,47 +67,79 @@
     </div>
     <nav id="navbar" class="navbar d-flex justify-content-end align-items-center w-100">
       <ul>
-        <li><a class="nav-link scrollto active translate" data-en="Home" data-ar="الرئيسية" href="#" onclick="loadPage('home.html', this); return false;">Home</a></li>
+        <li><a class="nav-link scrollto translate" data-en="Home" data-ar="الرئيسية" href="#" onclick="loadPage('home.html', this); return false;">Home</a></li>
         <li><a class="nav-link scrollto translate" data-en="About" data-ar="حول" href="#" onclick="loadPage('about.html', this); return false;">About</a></li>
         <li><a class="nav-link scrollto translate" data-en="Services" data-ar="خدمات" href="#" onclick="loadPage('services.html', this); return false;">Services</a></li>
         <li><a class="nav-link scrollto translate" data-en="Safety Instruction" data-ar="تعليمات السلامة" href="#" onclick="loadPage('safety.html', this); return false;">Safety Instruction</a></li>
         <li><a class="nav-link scrollto translate" data-en="Contact" data-ar="اتصال" href="#" onclick="loadPage('contact.html', this); return false;">Contact</a></li>
       </ul>
-      <i class="bi bi-list mobile-nav-toggle"></i>
+      <div class="text-center m-1 ms-2">
+        <select id="languageSelect" class="form-select form-select-sm shadow-none border-black w-auto" onchange="onLanguageChange(this.value)">
+          <option value="en" class="bg-light text-secondary">English</option>
+          <option value="ar" class="bg-light text-secondary">العربية</option>
+        </select>
+      </div>
+      <i class="bi bi-list mobile-nav-toggle" onclick="toggleMobileNav()"></i>
     </nav>
   </div>
-  <div class="text-center m-1">
-    <select id="languageSelect" class="form-select form-select-sm shadow-none border-black w-auto" onchange="changeLanguage(this.value)" onclick="loadPage(getCurrentPage());">
-      <option value="en" class="bg-light text-secondary">English</option>
-      <option value="ar" class="bg-light text-secondary">العربية</option>
-    </select>
-  </div>
+ 
 </header>
 <div id="content">
   <!-- This is where the content of the pages will be displayed -->
 </div>
-<footer class="footer">
-  <div class="copyrights">
-    <div class="container">
-      <div class="credits" style="color: green;">Designed by <a href="#">YourName</a></div>
+<footer class="footer bg-light text-light h-25" >
+  <div class="container">
+    <div class="row">
+      <div class="row justify-content-center">
+      <!-- About Section -->
+      <div class="col-lg-4 col-md-6 mb-4 mb-md-0">
+        <h5  style="color: green;" class=" translate" data-ar="معلومات عنا " data-en="About Us">About Us</h5>
+        <p class="small translate  translate" data-en="Ets.Himaya is dedicated to providing top-notch safety instructions and services to ensure the well-being of our community. Our mission is to promote safety and awareness through comprehensive training and resources." data-ar="Ets.Himaya مكرس لتقديم تعليمات وخدمات السلامة من الدرجة الأولى لضمان رفاهية مجتمعنا. مهمتنا هي تعزيز السلامة والوعي من خلال التدريب والموارد الشاملة">
+          Ets.Himaya is dedicated to providing top-notch safety instructions and services to ensure the well-being of our community. Our mission is to promote safety and awareness through comprehensive training and resources.
+        </p>
+      </div>
+      <!-- Quick Links Section -->
+      <div class="col-lg-2 col-md-6 mb-4 mb-md-0">
+        <h5 style="color: green;" class=" translate" data-ar="روابط سريعة" data-en="Quick links">
+          Quick links</h5>
+        <ul class="list-unstyled  translate" >
+          <li><a href="#" class="text-black  translate" data-en="Home" data-ar="الرئيسية" onclick="loadPage('home.html', this); return false;">Home</a></li>
+          <li><a href="#" class="text-black  translate" data-en="About" data-ar="حول" onclick="loadPage('about.html', this); return false;">About</a></li>
+          <li><a href="#" class="text-black  translate" data-en="Services" data-ar="خدمات" onclick="loadPage('services.html', this); return false;">Services</a></li>
+          <li><a href="#" class="text-black  translate" data-en="Safety Instruction" data-ar="تعليمات السلامة" onclick="loadPage('safety.html', this); return false;">Safety Instruction</a></li>
+          <li><a href="#" class="text-black  translate" data-en="Contact" data-ar="اتصال" onclick="loadPage('contact.html', this); return false;">Contact</a></li>
+        </ul>
+      </div>
+     </div>
+
+    
+    <hr class="my-4 " style="color: black;" />
+    <div class="row">
+      <div class="col-12 text-center">
+        <p class="mb-0">© 2024 Ets.Himaya. All Rights Reserved.</p>
+        <p class="mb-0">Designed by <a href="https://newbusiness-wd.com" class="text-dark text-decoration-none"><b>dr.Website </b></a>70 209 678</p>
+      </div>
     </div>
   </div>
 </footer>
+
 <script src="assets/vendor/aos/aos.js"></script>
 <script src="assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
 <script src="assets/vendor/glightbox/js/glightbox.min.js"></script>
 <script src="assets/vendor/swiper/swiper-bundle.min.js"></script>
 <!-- Template Main JS File -->
 <script src="assets/js/main.js"></script>
+
 <script>
 let currentActiveLink = null;
 
 window.addEventListener("DOMContentLoaded", function () {
   setInitialLanguage();
-  loadPage("home.html", true); // Load the home page initially
+  const homeLink = document.querySelector("#navbar a.nav-link[data-en='Home']");
+  loadPage('home.html', homeLink);
 });
 
-function loadPage(page, initialLoad = false) {
+function loadPage(page, link = null) {
   fetch(page)
     .then(response => response.text())
     .then(data => {
@@ -111,35 +148,37 @@ function loadPage(page, initialLoad = false) {
 
       // Update active link
       const navLinks = document.querySelectorAll("#navbar a.nav-link");
-      navLinks.forEach(link => link.classList.remove("active"));
+      navLinks.forEach(navLink => navLink.classList.remove("active"));
 
-      if (initialLoad && !currentActiveLink) {
-        currentActiveLink = document.querySelector("#navbar a.nav-link[href='#']");
+      if (link) {
+        currentActiveLink = link;
       } else {
-        currentActiveLink = Array.from(navLinks).find(link => link.getAttribute('onclick').includes(page));
+        currentActiveLink = Array.from(navLinks).find(navLink => navLink.getAttribute('href') === page);
       }
 
       if (currentActiveLink) {
         currentActiveLink.classList.add("active");
       }
-      // hideMobileNavbarOnClick();
+
+      saveCurrentPage(page);
+      hideMobileNavbarOnClick();
     })
     .catch(error => console.error("Error loading page:", error));
 }
 
 function changeLanguage(language) {
-  const elements = document.querySelectorAll('[data-' + language + ']');
+  const elements = document.querySelectorAll(`[data-${language}]`);
   elements.forEach(element => {
-    const translation = element.getAttribute('data-' + language);
+    const translation = element.getAttribute(`data-${language}`);
     if (translation) {
       element.textContent = translation;
     }
   });
 
   // Translate the content of the currently loaded page
-  const contentElements = document.querySelectorAll('#content [data-' + language + ']');
+  const contentElements = document.querySelectorAll(`#content [data-${language}]`);
   contentElements.forEach(element => {
-    const translation = element.getAttribute('data-' + language);
+    const translation = element.getAttribute(`data-${language}`);
     if (translation) {
       element.textContent = translation;
     }
@@ -160,33 +199,39 @@ function getSelectedLanguage() {
 }
 
 function getCurrentPage() {
-  const page = localStorage.getItem('currentPage');
-  return page ? page : "home.html";
+  return localStorage.getItem('currentPage') || "home.html";
+}
+
+function saveCurrentPage(page) {
+  localStorage.setItem('currentPage', page);
 }
 
 function onLanguageChange(value) {
   changeLanguage(value);
-  loadPage(getCurrentPage());
+  loadPage(getCurrentPage(), currentActiveLink);
 }
 
-// Save current page URL to local storage
 window.addEventListener('beforeunload', function () {
   const currentPage = getCurrentPage();
   localStorage.setItem('currentPage', currentPage);
 });
+
 function hideMobileNavbarOnClick() {
-const mobileNavLinks = document.querySelectorAll('.navbar-mobile ul li a');
-mobileNavLinks.forEach(link => {
-  link.addEventListener('click', function() {
-    const mobileNavbar = document.querySelector('.navbar-mobile');
-    mobileNavbar.style.display = 'none';
+  const mobileNavLinks = document.querySelectorAll('.navbar-mobile ul li a');
+  mobileNavLinks.forEach(link => {
+    link.addEventListener('click', function() {
+      const mobileNavbar = document.querySelector('.navbar-mobile  ');
+      if (mobileNavbar) {
+        mobileNavbar.style.display = 'none';
+      }
+    });
   });
-});
 }
-// JavaScript to hide the mobile navbar when a link is clicked
+
+// function toggleMobileNav() {
+//   const navbar = document.querySelector('.navbar');
+//   navbar.classList.toggle('navbar-mobile');
+// }
 </script>
 </body>
 </html>
-
-
-

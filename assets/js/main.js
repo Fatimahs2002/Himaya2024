@@ -120,19 +120,44 @@
   //   this.classList.toggle('bi-list')
   //   this.classList.toggle('bi-x')
   // })
-  document.addEventListener("DOMContentLoaded", function() {
-    const navToggle = document.querySelector('.mobile-nav-toggle');
-    const navbar = document.getElementById('navbar');
+  // document.addEventListener("DOMContentLoaded", function() {
+  //   const navToggle = document.querySelector('.mobile-nav-toggle');
+  //   const navbar = document.getElementById('navbar');
   
-    navToggle.addEventListener('click', function(e) {
-      navbar.classList.toggle('navbar-mobile');
-      this.classList.toggle('bi-list');
-      this.classList.toggle('bi-x');
-    });
+  //   navToggle.addEventListener('click', function(e) {
+  //     navbar.classList.toggle('navbar-mobile');
+  //     this.classList.toggle('bi-list');
+  //     this.classList.toggle('bi-x');
+  //   });
   
-    // Hide navbar on link click
+  //   // Hide navbar on link click
    
+  // });
+
+document.addEventListener("DOMContentLoaded", function() {
+  const navToggle = document.querySelector('.mobile-nav-toggle');
+  const navbar = document.getElementById('navbar');
+
+  navToggle.addEventListener('click', function(e) {
+    navbar.classList.toggle('navbar-mobile');
+    this.classList.toggle('bi-list');
+    this.classList.toggle('bi-x');
   });
+
+  // Hide navbar on link click
+  const navLinks = document.querySelectorAll('#navbar ul li a');
+  navLinks.forEach(link => {
+    link.addEventListener('click', function() {
+      if (navbar.classList.contains('navbar-mobile')) {
+        navbar.classList.remove('navbar-mobile');
+        navToggle.classList.remove('bi-x');
+        navToggle.classList.add('bi-list');
+      }
+    });
+  });
+});
+
+
   
   // const navLinks = document.querySelectorAll('#navbar a.nav-link');
   // navLinks.forEach(link => {
