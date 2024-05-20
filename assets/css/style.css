@@ -1792,3 +1792,8 @@ section {
     font-size: 16px;
 }
 }
+
+#contact #hero img {
+  
+  object-position: 70%;
+}
