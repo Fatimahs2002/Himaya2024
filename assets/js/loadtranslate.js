@@ -13,6 +13,11 @@ function loadPage(page, link = null) {
       document.getElementById("content").innerHTML = data;
       changeLanguage(getSelectedLanguage());
 
+      document.querySelectorAll("body")[0].classList.remove("home");
+      if(link.getAttribute('data-en') == "Home") {
+        document.querySelectorAll("body")[0].classList.add("home");
+
+      }
       // Update active link
       const navLinks = document.querySelectorAll("#navbar a.nav-link");
       navLinks.forEach(navLink => navLink.classList.remove("active"));

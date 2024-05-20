@@ -63,9 +63,9 @@
 <header id="header" class="header fixed-top d-flex align-items-center">
   <div class="container d-flex align-items-center justify-content-between">
     <div id="logo">
-      <img src="./assets/img/logo.jpg" alt="Company Logo" />
+      <img src="./assets/img/logo-trans.png" alt="Company Logo" />
     </div>
-    <nav id="navbar" class="navbar d-flex justify-content-end align-items-center w-100">
+    <nav id="navbar" class="navbar d-flex justify-content-end align-items-center w-100 gap-2">
       <ul>
         <li><a class="nav-link scrollto translate" data-en="Home" data-ar="الرئيسية" href="#" onclick="loadPage('./home.html', this); return false;">Home</a></li>
         <li><a class="nav-link scrollto translate" data-en="About" data-ar="حول" href="#" onclick="loadPage('./about.html', this); return false;">About</a></li>
@@ -79,7 +79,7 @@
           <option value="ar" class="bg-light text-secondary">العربية</option>
         </select>
       </div>
-      <i class="bi bi-list mobile-nav-toggle" onclick="toggleMobileNav()"></i>
+      <i style="color: #b11d2e" class="bi bi-list mobile-nav-toggle" onclick="toggleMobileNav()"></i>
     </nav>
   </div>
  
@@ -87,19 +87,23 @@
 <div id="content">
   <!-- This is where the content of the pages will be displayed -->
 </div>
-<footer class="footer bg-light text-light h-25" >
+<footer class="footer bg-light text-light px-lg-5  pt-lg-5  p-4 pb-4">
   <div class="container">
     <div class="row">
-      <div class="row justify-content-center">
+      <div class="col-12 col-md-2">
+        <a class="logo">
+          <img width="100px" src="assets/img/logo-trans.png"/>
+        </a>
+      </div>
       <!-- About Section -->
-      <div class="col-lg-4 col-md-6 mb-4 mb-md-0">
+      <div class="col-md-4">
         <h5  style="color: green;" class=" translate" data-ar="معلومات عنا " data-en="About Us">About Us</h5>
         <p class="small translate  translate" data-en="Ets.Himaya is dedicated to providing top-notch safety instructions and services to ensure the well-being of our community. Our mission is to promote safety and awareness through comprehensive training and resources." data-ar="Ets.Himaya مكرس لتقديم تعليمات وخدمات السلامة من الدرجة الأولى لضمان رفاهية مجتمعنا. مهمتنا هي تعزيز السلامة والوعي من خلال التدريب والموارد الشاملة">
           Ets.Himaya is dedicated to providing top-notch safety instructions and services to ensure the well-being of our community. Our mission is to promote safety and awareness through comprehensive training and resources.
         </p>
       </div>
       <!-- Quick Links Section -->
-      <div class="col-lg-2 col-md-6 mb-4 mb-md-0">
+      <div class="col-md-2">
         <h5 style="color: green;" class=" translate" data-ar="روابط سريعة" data-en="Quick links">
           Quick links</h5>
         <ul class="list-unstyled  translate" >
@@ -110,8 +114,29 @@
           <li><a href="#" class="text-black  translate" data-en="Contact" data-ar="اتصال" onclick="loadPage('contact.html', this); return false;">Contact</a></li>
         </ul>
       </div>
-     </div>
 
+      <div class="col-md-4">
+        <h5  style="color: green;" class=" translate"  data-eng="Contact" data-ar="اتصل بنا">Contact Us</h5>
+        <div class="info m-0">
+          <div class="d-flex gap-2">
+            <i style="color: #b11d2e" class="bi bi-geo-alt"></i>
+            <p class="element" data-eng="madona street Ray's apartment building 24/7 Bourj Hamoud" data-ar="شارع مادونا، مبنى ري، شقة ٢٤/٧، برج حمود">madona street Ray's apartment building 24/7<br> Bourj Hamoud</p>
+          </div>
+          <div class="email d-flex gap-2">
+            <i style="color: #b11d2e" class="bi bi-envelope"></i>
+            <p class="element" data-eng="info@himaya-lb.com" data-ar="info@himaya-lb.com">info@himaya-lb.com</p>
+          </div>
+          <div class="d-flex gap-2">
+            <i style="color: #b11d2e" class="bi bi-phone"></i>
+            <p class="element" data-eng="70554412" data-ar="٧٠٥٥٤٤١٢">70554412</p>
+          </div>
+        </div>
+        <div class="social-links d-flex gap-4">
+          <a href="https://www.facebook.com/Ets.Himaya?mibextid=JRoKGi" class="facebook"><i style="color: #b11d2e" class="bi bi-facebook"></i></a>
+          <a href="https://wa.me/message/BZNT4YDIWSS6E1" class="whatsapp"><i style="color: #b11d2e" class="bi bi-whatsapp"></i></a>
+        </div>
+      </div>
+</div>
     
     <hr class="my-4 " style="color: black;" />
     <div class="row">
