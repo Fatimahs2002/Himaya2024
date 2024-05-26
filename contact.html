@@ -1,193 +1,369 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Ets.Himaya</title>
-  <meta content="" name="description">
-  <meta content="" name="keywords">
-
-  <!-- Favicons -->
- 
-
-  <!-- Google Fonts -->
-  <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,700,700i|Roboto:100,300,400,500,700|Philosopher:400,400i,700,700i" rel="stylesheet">
-
-  <!-- Vendor CSS Files -->
-  <link href="assets/vendor/aos/aos.css" rel="stylesheet">
-  <link href="assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
-  <link href="assets/vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet">
-  <link href="assets/vendor/glightbox/css/glightbox.min.css" rel="stylesheet">
-  <link href="assets/vendor/swiper/swiper-bundle.min.css" rel="stylesheet">
-
-  <!-- Template Main CSS File -->
-  <link href="assets/css/style.css" rel="stylesheet">
-  <style>
-    .form-control-position {
-      position: absolute;
-      right: 15px;
-      top: 50%;
-      transform: translateY(-50%);
-      color: #aaa;
-    }
-
-    .form-group {
-      position: relative;
-    }
-
-    .form-control-icon {
-      padding-left: 2.5rem;
-      box-shadow: none !important;
-      border: 2px solid #ced4da;
-      transition: border-color 0.3s ease;
-    }
-
-    .form-control-icon:focus {
-      border-color: #b11d2e;
-      outline: none;
-    }
-
-    .info {
-      margin-top: 50px;
-    }
-
-    .social-links a , .info i{
-      font-size: 1.5rem;
-      color: #b11d2e;
-      margin-right: 10px;
-      transition: color 0.3s;
-    }
-
-    .social-links a:hover {
-      color: #b11d2e;
-    }
-
-    .input-group-text {
-      background-color: #b11d2e;
-      color: white;
-      border: 2px solid #b11d2e;
-    }
-
-    .input-group-text i {
-      font-size: 1.2rem;
-    }
-    button{
-      background-color: #b11d2e;
-      color: white;
-      border: none;
-      border-radius: 5px;
-      width: 200px;
-      height: 50px;
-    }
-    button:hover{
-       background-color: #b11d2ec6; 
-       color: white; 
-     
-   
-    
-    }
-
-
-
-  </style>
-</head>
-<body>
-
-<div id="contact" class="">        
-  <section class="w-100" id="hero">
-    <div class="position-relative d-flex justify-content-center w-100">
-      <img src="./assets/img/contactus-1.png" alt="Image">
-        <div class="text-overlay">
-            <h1 class="text-center element"  data-eng="Contact" data-ar="اتصل بنا">Contact Us</h1>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Ets.Himaya</title>
+    <meta content="" name="description" />
+    <meta content="" name="keywords" />
+    <!-- Google Fonts -->
+    <link
+      href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,700,700i|Roboto:100,300,400,500,700|Philosopher:400,400i,700,700i"
+      rel="stylesheet"
+    />
+    <!-- Vendor CSS Files -->
+    <link href="assets/vendor/aos/aos.css" rel="stylesheet" />
+    <link
+      href="assets/vendor/bootstrap/css/bootstrap.min.css"
+      rel="stylesheet"
+    />
+    <link
+      href="assets/vendor/bootstrap-icons/bootstrap-icons.css"
+      rel="stylesheet"
+    />
+    <link
+      href="assets/vendor/glightbox/css/glightbox.min.css"
+      rel="stylesheet"
+    />
+    <link href="assets/vendor/swiper/swiper-bundle.min.css" rel="stylesheet" />
+    <!-- Template Main CSS File -->
+    <link href="assets/css/style.css" rel="stylesheet" />
+    <style>
+      .form-control-position {
+        position: absolute;
+        right: 15px;
+        top: 50%;
+        transform: translateY(-50%);
+        color: #aaa;
+      }
+      .form-group {
+        position: relative;
+      }
+      .form-control-icon {
+        padding-left: 2.5rem;
+        box-shadow: none !important;
+        border: 2px solid #ced4da;
+        transition: border-color 0.3s ease;
+      }
+      .form-control-icon:focus {
+        border-color: #b11d2e;
+        outline: none;
+      }
+      .info {
+        margin-top: 50px;
+      }
+      .social-links a,
+      .info i {
+        font-size: 1.5rem;
+        color: #b11d2e;
+        margin-right: 10px;
+        transition: color 0.3s;
+      }
+      .social-links a:hover {
+        color: #b11d2e;
+      }
+      .input-group-text {
+        background-color: #b11d2e;
+        color: white;
+        border: 2px solid #b11d2e;
+      }
+      .input-group-text i {
+        font-size: 1.2rem;
+      }
+      button {
+        background-color: #b11d2e;
+        color: white;
+        border: none;
+        border-radius: 5px;
+        width: 200px;
+        height: 50px;
+      }
+      button:hover {
+        background-color: #b11d2ec6;
+        color: white;
+      }
+      #msg {
+        display: none;
+        color: green;
+      }
+      #spinner {
+        display: none;
+        margin-top: 20px;
+      }
+    </style>
+  </head>
+  <body>
+    <div id="contact" class="">
+      <section class="w-100" id="hero">
+        <div class="position-relative d-flex justify-content-center w-100">
+          <img src="./assets/img/contactus-1.png" alt="Image" />
+          <div class="text-overlay">
+            <h1
+              class="text-center element"
+              data-eng="Contact"
+              data-ar="اتصل بنا"
+            >
+              Contact Us
+            </h1>
+          </div>
         </div>
-    </div>
-</section>
-  <div class="container p-md-5 p-4" data-aos="fade-up">
-    <div class="section-title text-center mb-5">
-      <h5 class="element w-50 m-auto" data-eng="If you have any questions or need further information, please do not hesitate to reach out to us" data-ar="إذا كان لديك أي أسئلة أو تحتاج إلى مزيد من المعلومات، فلا تتردد في التواصل معنا">
-        If you have any questions or need further information, please do not hesitate to reach out to us
-      </h5>
-    </div>
-
-    <div class="row justify-content-center align-items-center" data-aos="fade-up" data-aos-delay="100">
- 
-
-      <div class="col-md-7">
-        <div class="php-email-form">
-          <h3 class="element text-center mb-3" style="color: green;" data-eng="Send Email" data-ar="أرسل بريدًا إلكترونيًا">Send Email</h2>
-          <form>
-            <div class="form-group">
-              <label for="name" class="form-label element" data-eng="Your Name" data-ar="اسمك">Your Name</label>
-              <div class="input-group">
-                <span class="input-group-text"><i class="bi bi-person"></i></span>
-                <input type="text" name="name" class="form-control form-control-icon" id="name" required>
+      </section>
+      <div class="container p-md-5 p-4" data-aos="fade-up">
+        <div class="section-title text-center mb-5">
+          <h5
+            class="element w-50 m-auto"
+            data-eng="If you have any questions or need further information, please do not hesitate to reach out to us"
+            data-ar="إذا كان لديك أي أسئلة أو تحتاج إلى مزيد من المعلومات، فلا تتردد في التواصل معنا"
+          >
+            If you have any questions or need further information, please do not
+            hesitate to reach out to us
+          </h5>
+        </div>
+        <div
+          class="row justify-content-center align-items-center"
+          data-aos="fade-up"
+          data-aos-delay="100"
+        >
+          <div class="col-md-7">
+            <div class="php-email-form">
+              <h3
+                class="element text-center mb-3"
+                style="color: green"
+                data-eng="Send Email"
+                data-ar="أرسل بريدًا إلكترونيًا"
+              >
+                Send Email
+              </h3>
+              <form action="">
+                <div class="form-group">
+                  <label
+                    for="name"
+                    class="form-label element"
+                    data-eng="Your Name"
+                    data-ar="اسمك"
+                    >Your Name</label
+                  >
+                  <div class="input-group">
+                    <span class="input-group-text"
+                      ><i class="bi bi-person"></i
+                    ></span>
+                    <input
+                      type="text"
+                      name="name"
+                      class="form-control form-control-icon"
+                      id="name"
+                      required
+                    />
+                  </div>
+                </div>
+                <div class="form-group mt-3">
+                  <label
+                    for="email"
+                    class="form-label element"
+                    data-eng="Your Email"
+                    data-ar="بريدك الإلكتروني"
+                    >Your Email</label
+                  >
+                  <div class="input-group">
+                    <span class="input-group-text"
+                      ><i class="bi bi-envelope"></i
+                    ></span>
+                    <input
+                      type="email"
+                      class="form-control form-control-icon"
+                      name="email"
+                      id="email"
+                      required
+                    />
+                  </div>
+                </div>
+                <div class="form-group mt-3">
+                  <label
+                    for="subject"
+                    class="form-label element"
+                    data-eng="Subject"
+                    data-ar="الموضوع"
+                    >Subject</label
+                  >
+                  <div class="input-group">
+                    <span class="input-group-text"
+                      ><i class="bi bi-pencil"></i
+                    ></span>
+                    <input
+                      type="text"
+                      class="form-control form-control-icon"
+                      name="subject"
+                      id="subject"
+                      required
+                    />
+                  </div>
+                </div>
+                <div class="form-group mt=3">
+                  <label
+                    for="message"
+                    class="form-label element"
+                    data-eng="Message"
+                    data-ar="رسالة"
+                    >Message</label
+                  >
+                  <div class="input-group">
+                    <span class="input-group-text"
+                      ><i class="bi bi-chat-text"></i
+                    ></span>
+                    <textarea
+                      class="form-control form-control-icon"
+                      name="message"
+                      rows="5"
+                      id="message"
+                      required
+                    ></textarea>
+                  </div>
+                </div>
+                <div class="my-3">
+                  <div class="error-message"></div>
+                  <div
+                    class="sent-message"
+                    id="msg"
+                    class="element"
+                    data-eng="Your message has been sent. Thank you!"
+                    data-ar="تم إرسال رسالتك. شكرًا لك!"
+                  >
+                    Your message has been sent. Thank you!
+                  </div>
+                </div>
+                <div class="text-center">
+                  <button
+                    type="button"
+                    onclick="sendMail()"
+                    class="element"
+                    data-eng="Send Message"
+                    data-ar="إرسال رسالة"
+                  >
+                    Send Message
+                  </button>
+                  <div id="spinner" class="text-center">
+                    <div class="spinner-border text-danger" role="status">
+                      <span class="visually-hidden">Loading...</span>
+                    </div>
+                  </div>
+                </div>
+              </form>
+            </div>
+          </div>
+          <div class="col-md-5">
+            <div class="info info-box">
+              <div class="d-flex mb-4">
+                <i class="bi bi-geo-alt"></i>
+                <p
+                  class="element"
+                  data-eng="madona street Ray's apartment building 24/7 Bourj Hamoud"
+                  data-ar="شارع مادونا، مبنى ري، شقة ٢٤/٧، برج حمود"
+                >
+                  madona street Ray's apartment building 24/7<br />
+                  Bourj Hamoud
+                </p>
+              </div>
+              <div class="email d-flex mb-4">
+                <i class="bi bi-envelope"></i>
+                <p
+                  class="element"
+                  data-eng="info@himaya-lb.com"
+                  data-ar="info@himaya-lb.com"
+                >
+                  info@himaya-lb.com
+                </p>
+              </div>
+              <div class="d-flex mb-4">
+                <i class="bi bi-phone"></i>
+                <p class="element" data-eng="70554412" data-ar="٧٠٥٥٤٤١٢">
+                  70554412
+                </p>
+              </div>
+              <div class="social-links d-flex justify-content-center">
+                <a
+                  href="https://www.facebook.com/Ets.Himaya?mibextid=JRoKGi"
+                  class="facebook"
+                  ><i class="bi bi-facebook"></i
+                ></a>
+                <a href="https://wa.me/message/BZNT4YDIWSS6E1" class="whatsapp"
+                  ><i class="bi bi-whatsapp"></i
+                ></a>
               </div>
             </div>
-            <div class="form-group mt-3">
-              <label for="email" class="form-label element" data-eng="Your Email" data-ar="بريدك الإلكتروني">Your Email</label>
-              <div class="input-group">
-                <span class="input-group-text"><i class="bi bi-envelope"></i></span>
-                <input type="email" class="form-control form-control-icon" name="email" id="email" required>
-              </div>
-            </div>
-            <div class="form-group mt-3">
-              <label for="subject" class="form-label element" data-eng="Subject" data-ar="الموضوع">Subject</label>
-              <div class="input-group">
-                <span class="input-group-text"><i class="bi bi-pencil"></i></span>
-                <input type="text" class="form-control form-control-icon" name="subject" id="subject" required>
-              </div>
-            </div>
-            <div class="form-group mt-3">
-              <label for="message" class="form-label element" data-eng="Message" data-ar="رسالة">Message</label>
-              <div class="input-group">
-                <span class="input-group-text"><i class="bi bi-chat-text"></i></span>
-                <textarea class="form-control form-control-icon" name="message" rows="5" id="message" required></textarea>
-              </div>
-            </div>
-            <div class="my-3">
-              <div class="error-message"></div>
-              <div class="sent-message d-none" id="msg" class="element" data-eng="Your message has been sent. Thank you!" data-ar="تم إرسال رسالتك. شكرًا لك!">Your message has been sent. Thank you!</div>
-            </div>
-            <div class="text-center">
-              <button type="submit" onclick="sendMail()" class="element " data-eng="Send Message" data-ar="إرسال رسالة">Send Message</button>
-            </div>
-          </form>
+          </div>
         </div>
       </div>
-      <div class="col-md-5">
-        <div class="info info-box">
-          <div class="d-flex mb-4">
-            <i class="bi bi-geo-alt"></i>
-            <p class="element" data-eng="madona street Ray's apartment building 24/7 Bourj Hamoud" data-ar="شارع مادونا، مبنى ري، شقة ٢٤/٧، برج حمود">madona street Ray's apartment building 24/7<br> Bourj Hamoud</p>
-          </div>
-          <div class="email d-flex mb-4">
-            <i class="bi bi-envelope"></i>
-            <p class="element" data-eng="info@himaya-lb.com" data-ar="info@himaya-lb.com">info@himaya-lb.com</p>
-          </div>
-          <div class="d-flex mb-4">
-            <i class="bi bi-phone"></i>
-            <p class="element" data-eng="70554412" data-ar="٧٠٥٥٤٤١٢">70554412</p>
-          </div>
-        <div class="social-links d-flex justify-content-center">
-          <a href="https://www.facebook.com/Ets.Himaya?mibextid=JRoKGi" class="facebook"><i class="bi bi-facebook"></i></a>
-          <a href="https://wa.me/message/BZNT4YDIWSS6E1" class="whatsapp"><i class="bi bi-whatsapp"></i></a>
-        </div>
-        </div>
-      </div>
     </div>
-  </div>
-</div>
+    <script
+      type="text/javascript"
+      src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"
+    ></script>
+    <script src="assets/vendor/aos/aos.js"></script>
+    <script src="assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+    <script src="assets/vendor/glightbox/js/glightbox.min.js"></script>
+    <script src="assets/vendor/swiper/swiper-bundle.min.js"></script>
+    <script src="assets/js/main.js"></script>
+    <script src="./assets/js/translate.js"></script>
+    <script src="./assets/js/main.js"></script>
+    <script>
+      // (function () {
+      //   emailjs.init("KFH_qIBQFYmTgXbBY");
+      // })();
 
-<script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
-<script src="assets/vendor/aos/aos.js"></script>
-<script src="assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
-<script src="assets/vendor/glightbox/js/glightbox.min.js"></script>
-<script src="assets/vendor/swiper/swiper-bundle.min.js"></script>
-<script src="assets/js/main.js"></script>
-<script src="./assets/js/sendEmail.js"></script>
-<script src="./assets/js/translate.js"></script>
+      // function sendMail() {
+      //   var name = document.getElementById("name").value;
+      //   var email = document.getElementById("email").value;
+      //   var subject = document.getElementById("subject").value;
+      //   var message = document.getElementById("message").value;
 
+      //   // Validate that all fields are not empty
+      //   if (name && email && subject && message) {
+      //     var params = {
+      //       name: name,
+      //       email: email,
+      //       subject: subject,
+      //       message: message,
+      //     };
 
-</script>
-</body>
+      //     const serviceID = "service_8n1so6n";
+      //     const templateID1 = "template_irco4qm"; // First template ID
+      //     const templateID2 = "template_86xhtvw"; // Second template ID
+      //     // Show spinner
+      //     document.getElementById("spinner").style.display = "block";
+      //     document.getElementById("msg").style.display = "none";
+
+      //     // Send email to the first recipient using the first template
+      //     emailjs
+      //       .send(serviceID, templateID1, params)
+      //       .then((res) => {
+      //         console.log("Email sent to first recipient:", res);
+
+      //         // Send email to the second recipient using the second template
+      //         return emailjs.send(serviceID, templateID2, params);
+      //       })
+      //       .then((res) => {
+      //         console.log("Email sent to second recipient:", res);
+
+      //         // Clear form fields
+      //         document.getElementById("name").value = "";
+      //         document.getElementById("email").value = "";
+      //         document.getElementById("subject").value = "";
+      //         document.getElementById("message").value = "";
+
+      //         // Show success message and hide spinner
+      //         document.getElementById("msg").style.display = "block";
+      //         document.getElementById("spinner").style.display = "none";
+      //       })
+      //       .catch((err) => {
+      //         console.log(err);
+      //         alert("Failed to send email. Please try again.");
+      //         // Hide spinner
+      //         document.getElementById("spinner").style.display = "none";
+      //       });
+      //   } else {
+      //     alert("Please fill in all fields.");
+      //   }
+      // }
+    </script>
+  </body>
 </html>
