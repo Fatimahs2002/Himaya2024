@@ -1,6 +1,6 @@
 (function () {
-     emailjs.init("KFH_qIBQFYmTgXbBY");
-   })();
+  emailjs.init("KFH_qIBQFYmTgXbBY");
+})();
 
    function sendMail() {
      var name = document.getElementById("name").value;
